@@ -43,3 +43,6 @@ To get started with the CO2 Emission Data Analysis project, follow these steps:
 
 1. Clone the repository to your local machine:
 
+## Author 
+ **samima Hassa**
+
