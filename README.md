@@ -37,6 +37,7 @@ The Python code for data analysis includes functionalities to:
 
  ![DD655CF7-D366-47FD-8497-1462907F041E](https://github.com/samima55/Co2_Emission/assets/54752074/c0568687-e797-4535-831a-fd3e9bbc8978)
 
+![FB164255-29DF-42A5-9D78-45DEE9D59A18](https://github.com/samima55/Co2_Emission/assets/54752074/b4b19401-a7de-43fb-acd5-c51072b75d16)
 
 
 ## Getting Started
