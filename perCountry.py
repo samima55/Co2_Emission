@@ -29,6 +29,8 @@ if country_to_find in myDict:
     plt.ylabel('Emissions')
     plt.grid(True)
 
+ ![DD655CF7-D366-47FD-8497-1462907F041E](https://github.com/samima55/Co2_Emission/assets/54752074/c0568687-e797-4535-831a-fd3e9bbc8978)
+
     # Show the plot
     plt.show()
 else:
