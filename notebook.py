@@ -263,6 +263,12 @@ all_emissions_array = np.array(all_countries_emissions)
 # Scatter plot for average, max, and min
 plt.figure(figsize=(12, 6))
 
+average_emissions = np.mean(all_emissions_array, axis=0)
+max_emissions = np.max(all_emissions_array, axis=0)
+min_emissions = np.min(all_emissions_array, axis=0)
+
+
+
 # Scatter plot for average
 plt.scatter(selected_years, average_emissions, marker='o', label='Average')
 
@@ -300,4 +306,65 @@ percentage_change = (all_emissions_array[:, 1:] / all_emissions_array[:, :-1] - 
 print(f'Percentage change in CO2 emissions for each country between consecutive years:\n{percentage_change}')
 
 
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Assuming percentage_change is the variable containing your data
+# Make sure percentage_change is a 1D array for this example
+percentage_change = np.array(percentage_change)
+
+# Assuming you have the years as x-axis values
+# You may need to replace this with your actual years data
+years = np.arange(1, len(percentage_change) + 1)
+
+# Perform linear regression using numpy's polyfit
+slope, intercept = np.polyfit(years, percentage_change, 1)
+
+# Create a line using the slope and intercept
+line = slope * years + intercept
+
+# Plot the data and the linear fit
+plt.plot(years, percentage_change, 'o', label='Percentage Change')
+plt.plot(years, line, label=f'Linear Fit: {slope:.2f}x + {intercept:.2f}')
+
+# Add labels and title
+plt.xlabel('Year')
+plt.ylabel('Percentage Change in CO2 Emissions')
+plt.title('Linear Fit of Percentage Change in CO2 Emissions Over Years')
+plt.legend()
+
+# Show the plot
+plt.show()
+
+
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Assuming percentage_change is the variable containing your data
+# Make sure percentage_change is a 1D array for this example
+percentage_change = np.array(percentage_change)
+
+# Assuming you have the years as x-axis values
+# You may need to replace this with your actual years data
+years = np.arange(1, len(percentage_change[0]) + 1)
+
+# Perform quadratic regression using polyfit
+coefficients = np.polyfit(years, percentage_change[1], 2)
+
+# Generate a quadratic fit using the coefficients
+quadratic_fit = np.polyval(coefficients, years)
+
+# Plot the data and the quadratic fit
+plt.plot(years, percentage_change[0], 'o', label='Percentage Change')
+plt.plot(years, quadratic_fit, label=f'Quadratic Fit: {coefficients[0]:.2f}x^2 + {coefficients[1]:.2f}x + {coefficients[2]:.2f}')
+
+# Add labels and title
+plt.xlabel('Year')
+plt.ylabel('Percentage Change in CO2 Emissions')
+plt.title('Quadratic Fit of Percentage Change in CO2 Emissions Over Years')
+plt.legend()
+
+# Show the plot
+plt.show()
 
